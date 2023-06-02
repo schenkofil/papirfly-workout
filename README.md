@@ -6,20 +6,14 @@
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Start project
 
 ```sh
-npm run dev
+npm run start:dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Start fake api
 
 ```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm run api:dev
 ```
