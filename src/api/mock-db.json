@@ -1,0 +1,68 @@
+{
+  "tiles": [
+    {
+      "id": 1,
+      "tileText": "Das is nicht seznam!",
+      "bgColor": "#565be1",
+      "link": "https://www.seznam.cz"
+    },
+    {
+      "id": 2,
+      "tileText": "Google",
+      "bgColor": "#852914",
+      "link": "https://www.google.com"
+    },
+    {
+      "id": 3,
+      "tileText": "Alza",
+      "bgColor": "#3393ff",
+      "link": "https://www.alza.cz"
+    },
+    {
+      "id": 4,
+      "tileText": "Stack overflow",
+      "bgColor": "#d93030",
+      "link": "https://www.stackoverflow.com"
+    },
+    {
+      "id": 5,
+      "tileText": "Youtube",
+      "bgColor": "#d562e4",
+      "link": "https://www.youtube.com"
+    },
+    {
+      "id": 6,
+      "tileText": "Twitter",
+      "bgColor": "#b2ad1f",
+      "link": "https://www.twitter.com"
+    },
+    {
+      "id": 7,
+      "tileText": "Facebook",
+      "bgColor": "#ff3364",
+      "link": "https://www.facebook.com"
+    },
+    {
+      "id": 8,
+      "tileText": "Instagram",
+      "bgColor": "#a13030",
+      "link": "https://www.instagram.com"
+    },
+    {
+      "tileText": "Random tile text",
+      "bgColor": "#3d8b2d",
+      "link": "#",
+      "id": 9
+    },
+    {
+      "tileText": "Example text",
+      "bgColor": "#d03ebd",
+      "link": "123",
+      "id": 10
+    }
+  ],
+  "titles": {
+    "title": "Get inspired",
+    "subtitle": "text"
+  }
+}
