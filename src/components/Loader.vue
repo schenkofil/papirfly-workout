@@ -22,6 +22,7 @@ export default {
   position: fixed;
   background: #222;
   background-color: transparent;
+  z-index: 10000;
 }
 
 .overlay__inner {
