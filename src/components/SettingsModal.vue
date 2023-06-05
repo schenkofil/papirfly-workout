@@ -51,7 +51,7 @@ export default {
 <template>
   <div class="modal">
     <div class="modal-content">
-      <span class="close" @click="closeModalClicked()">&times;</span>
+      <span class="close" @click="$emit('close-modal')">&times;</span>
       <div class="modalContainer">
         <div class="leftSide">
           <span>Tiles</span>
@@ -167,12 +167,6 @@ export default {
   row-gap: 15px;
 }
 
-.divider {
-  height: 1px;
-  margin: 16px 8px 14px 20px;
-  background-color: #f1f4f8;
-}
-
 .spacer {
   flex-grow: 1;
 }
@@ -202,26 +196,13 @@ export default {
   border-radius: 8px;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  padding: 0 10px;
 }
 .flexRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-}
-.tilesList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-.tileSetting {
-  display: flex;
-  flex-direction: row;
-  column-gap: 20px;
 }
 
 .tileListWrapper {

@@ -5,76 +5,76 @@
       "tileText": "Seznam",
       "bgColor": "#232424",
       "link": "https://seznam.cz",
-      "index": 1
+      "index": 2
     },
     {
       "tileText": "Alza",
       "bgColor": "#932a2a",
       "link": "https://alza.cz",
-      "index": 2,
+      "index": 3,
       "id": 8
     },
     {
       "tileText": "Twitter",
       "bgColor": "#e260d7",
       "link": "https://twitter.com",
-      "index": 3,
+      "index": 4,
       "id": 9
     },
     {
       "tileText": "Instagram",
       "bgColor": "#6b2e2e",
       "link": "https://instagram.com",
-      "index": 4,
+      "index": 5,
       "id": 10
     },
     {
       "tileText": "Binance",
       "bgColor": "#f2a1a1",
       "link": "https://binance.com/en",
-      "index": 5,
+      "index": 6,
       "id": 11
     },
     {
       "tileText": "Google",
       "bgColor": "#31486d",
       "link": "https://google.com",
-      "index": 6,
+      "index": 7,
       "id": 12
     },
     {
       "tileText": "Random tile",
       "bgColor": "#632121",
       "link": "#",
-      "index": 7,
+      "index": 8,
       "id": 13
     },
     {
       "tileText": "Next random tile",
       "bgColor": "#ec4d09",
       "link": "#",
-      "index": 0,
+      "index": 1,
       "id": 14
     },
     {
       "tileText": "Tile text",
       "bgColor": "#0e310c",
       "link": "#",
-      "index": 8,
+      "index": 9,
       "id": 15
     },
     {
       "tileText": "Tile text",
-      "bgColor": "#862d2d",
+      "bgColor": "#7b5eb0",
       "link": "#",
-      "index": 9,
+      "index": 10,
       "id": 16
     },
     {
-      "tileText": "Ahoj",
+      "tileText": "Tile1",
       "bgColor": "#723c6d",
       "link": "#",
-      "index": 10,
+      "index": 0,
       "id": 17
     }
   ],

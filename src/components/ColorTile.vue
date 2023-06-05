@@ -18,7 +18,7 @@ export default {
 <template>
   <a :href="tile.link" target="_blank">
     <div :style="style" class="tileContainer">
-      <h3 class="tileText">{{ tile.tileText }}</h3>
+      <h3>{{ tile.tileText }}</h3>
     </div>
   </a>
 </template>
@@ -31,23 +31,20 @@ a {
   color: #fff;
   font-weight: 500;
 }
+
 .tileContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   border-style: 1px solid black;
   cursor: pointer;
+  width: 100%;
   transition: box-shadow 0.3s;
   aspect-ratio: 1 / 1;
+  padding: 0 10px;
 }
 
 .tileContainer:hover {
   box-shadow: 0 0 20px rgba(14, 13, 13, 0.2);
-}
-
-.tileText {
-  padding: 0 10px;
-  text-align: center;
 }
 </style>
