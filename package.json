@@ -1,12 +1,10 @@
 {
   "name": "vue-workout",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start:dev": "SET NODE_CLIENT_ENV=dev && vite --port 8888",
-    "start:test": "SET NODE_CLIENT_ENV=test && vite --port 8888",
     "api:dev": "SET NODE_API_ENV=dev && json-server --watch ./src/api/mock-db.json --port 7777",
-    "api:test": "SET NODE_API_ENV=test && json-server --watch ./src/api/mock-db.json --port 7777",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
