@@ -1,9 +1,11 @@
 <script lang="ts">
 import type { TileData } from '@/types/Tile'
 import type { TitleData } from '@/types/Titles'
-import { shallowReactive, type PropType } from 'vue'
+import { type PropType, toRaw } from 'vue'
+import draggable from 'vuedraggable'
 
 export default {
+  components: { draggable },
   props: {
     tiles: {
       type: Object as PropType<Array<TileData>>
@@ -21,8 +23,13 @@ export default {
   },
   computed: {
     tilesData() {
-      console.log(this.titles)
       return this.tiles
+    },
+    dragOptions() {
+      return {
+        animation: 200,
+        disabled: false
+      }
     }
   },
   methods: {
@@ -70,16 +77,27 @@ export default {
             <span>Tiles</span>
             <button class="addButton" @click="addTile()">+ Add</button>
           </div>
-          <div class="tilesListConstainer">
-            <ul class="tileListWrapper">
-              <li class="tileSetting" v-for="tile in tilesData">
-                <input type="color" v-model="tile.bgColor" />
-                <input type="text" v-model="tile.tileText" />
-                <input type="text" v-model="tile.link" />
-                <button @click="deleteTile(tile.id)">Delete</button>
+          <draggable
+            class="tileListWrapper"
+            :list="tilesData"
+            v-bind="dragOptions"
+            :component-data="{
+              tag: 'ul',
+              type: 'transition-group',
+              name: 'flip-list'
+            }"
+            item-key="index"
+          >
+            <template #item="{ element, index }">
+              <li class="tileRow">
+                <div class="handle dndButton"></div>
+                <input type="color" v-model="element.bgColor" />
+                <input type="text" v-model="element.tileText" />
+                <input type="text" v-model="element.link" />
+                <button @click="deleteTile(element.id)">Delete</button>
               </li>
-            </ul>
-          </div>
+            </template>
+          </draggable>
         </div>
       </div>
     </div>
@@ -210,6 +228,22 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+.tileRow {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: center;
+}
+.dndButton {
+  width: 10px;
+  height: 10px;
+  background-color: #407cff;
+  cursor: move;
 }
 
 @media (max-width: 1200px) {

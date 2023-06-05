@@ -22,15 +22,28 @@ export default {
     toggleModal() {
       this.isModalShown = !this.isModalShown
     },
+    reorderTiles() {
+      this.tiles.forEach((item, index) => (item.index = index))
+    },
     async fetchData() {
       this.isLoading = true
-      const responseTiles = await apiClient.get('/tiles').then((x) => {
-        return x.data
-      })
-      const responseTitles = await apiClient.get('/titles').then((x) => {
-        return x.data
-      })
-      this.tiles = responseTiles
+      const responseTiles = await apiClient
+        .get('/tiles')
+        .then((x) => {
+          return x.data
+        })
+        .catch(function (error) {
+          console.log(error.toJSON())
+        })
+      const responseTitles = await apiClient
+        .get('/titles')
+        .then((x) => {
+          return x.data
+        })
+        .catch(function (error) {
+          console.log(error.toJSON())
+        })
+      this.tiles = responseTiles.sort((a: TileData, b: TileData) => a.index - b.index)
       this.titles = responseTitles
       this.isLoading = false
     },
@@ -39,7 +52,8 @@ export default {
         await apiClient.post('/tiles', {
           tileText: 'Tile text',
           bgColor: '#ffffff',
-          link: '#'
+          link: '#',
+          index: this.tiles.length + 1
         } as TileData)
       } catch (err) {
         console.log(err)
@@ -54,19 +68,25 @@ export default {
       }
       this.fetchData()
     },
-    async saveData() {
-      this.isLoading = true
-      this.tiles.map(async (x) => {
+    async updateTilesData() {
+      this.tiles.forEach(async (x) => {
         await apiClient.put(`/tiles/${x.id}`, x)
       })
+    },
+    async updateTitlesData() {
       await apiClient.put(`/titles`, this.titles)
+    },
+    async saveData() {
+      this.isLoading = true
+      this.reorderTiles()
+      this.updateTilesData()
+      this.updateTitlesData()
       this.toggleModal()
       this.isLoading = false
     }
   },
   computed: {
     pageTitle() {
-      console.log(this.pageSubtitle)
       return this.titles.title
     },
     pageSubtitle() {
@@ -74,7 +94,6 @@ export default {
     }
   },
   async created() {
-    // TODO: Promise.all(), try/catch
     this.fetchData()
   }
 }

@@ -3,4 +3,5 @@ export interface TileData {
   tileText: string
   bgColor: string
   link: string
+  index: number
 }
